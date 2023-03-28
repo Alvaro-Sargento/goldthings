@@ -23,9 +23,17 @@
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-jpa</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<version>8.0.32</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
-
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-devtools</artifactId>
@@ -39,6 +47,7 @@
 			<scope>test</scope>
 		</dependency>
 		
+<<<<<<< HEAD
 		<dependency>
 		    <groupId>org.webjars.npm</groupId>
 		    <artifactId>github-com-transferwise-bootstrap</artifactId>
@@ -67,6 +76,8 @@
 			<groupId>org.springframework.boot</groupId>  
 			<artifactId>spring-boot-starter-data-jpa</artifactId>
 		</dependency>
+=======
+>>>>>>> 52f12294e30f9c7412da26d7b9709c814d1c17ee
 	</dependencies>
 
 	<build>
