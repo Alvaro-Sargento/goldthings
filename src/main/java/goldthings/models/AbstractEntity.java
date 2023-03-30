@@ -1,4 +1,4 @@
-package models;
+package goldthings.models;
 
 import java.io.Serializable;
 import java.util.Objects;

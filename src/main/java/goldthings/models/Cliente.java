@@ -1,4 +1,4 @@
-package models;
+package goldthings.models;
 
 import jakarta.persistence.*;
 
@@ -11,38 +11,38 @@ public class Cliente extends AbstractEntity<Long> {
 
 	@Column(nullable = false)
 	private String nome;
-	
+
 	@Column(nullable = false)
 	private String apelido;
-	
+
 	@Column(nullable = false)
 	private String cidade;
-	
+
 	@Column(nullable = false)
 	private String bairro;
-	
+
 	@Column(nullable = false)
 	private String quarteirao;
-	
+
 	@Column (nullable = false, unique = true)
 	private String bi;
-	
+
 	@Column(nullable = false)
 	private String email;
-	
+
 	@Column(nullable = false, name="nr_telefone")
 	private Integer nr_telefone;
-	
+
 	@Column(nullable = false, name="nr_casa")
 	private Integer nr_casa;
-	
+
 	@ManyToOne
 	@JoinColumn(name = "id_user_fk")
 	private Usuario user;
-	
+
 	@OneToMany(mappedBy="cliente")
 	private ArrayList<Registo_produto> registo_produto = new ArrayList<>();
-	
+
 
 	public String getNome() {
 		return nome;
@@ -116,6 +116,6 @@ public class Cliente extends AbstractEntity<Long> {
 		this.user = user;
 	}
 
-	
-	
+
+
 }

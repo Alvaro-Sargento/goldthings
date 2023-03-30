@@ -1,4 +1,4 @@
-package models;
+package goldthings.models;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -9,22 +9,22 @@ import jakarta.persistence.*;
 @Entity
 @Table(name="PRODUTO")
 public class Produto extends AbstractEntity<Long> {
-	
+
 	@Column(name="nome", nullable =false)
 	private String nome;
-	
+
 	@Column(nullable =false)
 	private String descricao;
-	
+
 	@Column(nullable =false)
 	private Integer quantidade;
-	
+
 	@Column(nullable =false, columnDefinition="DOUBLE DEFAULT 0.00")
 	private Double preco;
-	
+
 	@Column(name="data_exp", nullable =false, columnDefinition="DATE")
 	private LocalDate data_exp;
-	
+
 	@OneToMany(mappedBy="produto")
 	private ArrayList<Registo_produto> registo_produto = new ArrayList<>();
 
@@ -67,7 +67,7 @@ public class Produto extends AbstractEntity<Long> {
 	public void setData_exp(LocalDate data_exp) {
 		this.data_exp = data_exp;
 	}
-	
-	
+
+
 
 }

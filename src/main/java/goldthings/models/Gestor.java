@@ -1,4 +1,4 @@
-package models;
+package goldthings.models;
 
 import jakarta.persistence.*;
 

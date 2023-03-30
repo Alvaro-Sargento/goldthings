@@ -1,4 +1,4 @@
-package models;
+package goldthings.models;
 
 import jakarta.persistence.*;
 @SuppressWarnings("serial")
@@ -8,11 +8,11 @@ public class Classificacao extends AbstractEntity<Long> {
 
 	@Column(nullable=false)
 	private String descricao;
-	
+
 	@OneToOne
 	@JoinColumn(name="id_cliente_fk")
 	private Cliente cliente;
-	
+
 	@OneToOne
 	@JoinColumn(name="id_produto_fk")
 	private Produto produto;
@@ -40,8 +40,8 @@ public class Classificacao extends AbstractEntity<Long> {
 	public void setProduto(Produto produto) {
 		this.produto = produto;
 	}
-	
-	
-	
+
+
+
 
 }

@@ -1,4 +1,4 @@
-package models;
+package goldthings.models;
 
 import java.time.LocalDate;
 
@@ -7,8 +7,7 @@ import jakarta.persistence.*;
 @SuppressWarnings("serial")
 @Entity
 @Table(name="REGISTO_PRODUTO")
-public class Registo_produto extends AbstractEntity<Long> {
-
+public class Registo_produto  {
 @EmbeddedId
 private RegistoProdutoId mix;
 
