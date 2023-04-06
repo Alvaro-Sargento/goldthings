@@ -19,25 +19,17 @@ public class ProductoController {
     @Autowired
     private ProductRepository productRepository;
 
-
-    @GetMapping("/produto")
-    public String index(Model model) {
-        List<Produto> produtoList = productRepository.findAll();
-
-        model.addAttribute("producto", new Cliente());
-        model.addAttribute("dados", produtoList);
-        return "listar-produto";
-    }
-
     @PostMapping("/produto-save")
     public String create(@ModelAttribute("produto") Produto produto) {
         productRepository.save(produto);
         return "redirect:/produto";
     }
 
-    @GetMapping("/produto-formulario")
+    @GetMapping("/produto")
     public String form(Model model) {
+        List<Produto> produtoList = productRepository.findAll();
         model.addAttribute("produto", new Produto());
+        model.addAttribute("dados", produtoList);
         return "produto";
     }
 
