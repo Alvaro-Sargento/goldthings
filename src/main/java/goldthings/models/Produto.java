@@ -25,8 +25,8 @@ public class Produto extends AbstractEntity<Long> {
 	@Column(name="data_exp", nullable =false, columnDefinition="DATE")
 	private LocalDate data_exp;
 
-	@OneToMany(mappedBy="produto")
-	private ArrayList<Registo_produto> registo_produto = new ArrayList<>();
+//	@OneToMany(mappedBy="produto", cascade = CascadeType.ALL, orphanRemoval = true)
+//	private ArrayList<Registo_produto> registo_produto = new ArrayList<>();
 
 	public String getNome() {
 		return nome;

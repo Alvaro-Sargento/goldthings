@@ -40,9 +40,16 @@ public class Cliente extends AbstractEntity<Long> {
 	@JoinColumn(name = "id_user_fk")
 	private Usuario user;
 
-	@OneToMany(mappedBy="cliente")
-	private ArrayList<Registo_produto> registo_produto = new ArrayList<>();
-
+//	@OneToMany(mappedBy="cliente", cascade = CascadeType.ALL, orphanRemoval = true)
+//	private ArrayList<Registo_produto> registo_produto = new ArrayList<>();
+//
+//	public ArrayList<Registo_produto> getRegisto_produto() {
+//		return registo_produto;
+//	}
+//
+//	public void setRegisto_produto(ArrayList<Registo_produto> registo_produto) {
+//		this.registo_produto = registo_produto;
+//	}
 
 	public String getNome() {
 		return nome;
@@ -70,6 +77,14 @@ public class Cliente extends AbstractEntity<Long> {
 
 	public String getBairro() {
 		return bairro;
+	}
+
+	public void setBi(String bi) {
+		this.bi = bi;
+	}
+
+	public String getBi() {
+		return bi;
 	}
 
 	public void setBairro(String bairro) {

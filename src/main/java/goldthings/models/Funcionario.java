@@ -118,6 +118,14 @@ public class Funcionario extends AbstractEntity<Long> {
 		this.salario = salario;
 	}
 
+	public String getBi() {
+		return bi;
+	}
+
+	public void setBi(String bi) {
+		this.bi = bi;
+	}
+
 	public Usuario getUser() {
 		return user;
 	}
