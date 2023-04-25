@@ -12,14 +12,19 @@
 </head>
 <body>
 
+	<nav class="navbar navbar-light bg-dark">
+	  <div class="container-fluid">
+	    <span class="navbar-brand mb-0 h1 text-white fs-1">GOLD THINGS</span>
+	  </div>
+	</nav>
+	
 <div class="row mt-5">
   <div class="col-2">
     <div class="list-group">
-      <a href="index.html" class="list-group-item list-group-item-action">Início</a>
-      <a href="cliente/cadastro.html" class="list-group-item list-group-item-action">Cliente</a>
-      <a href="funcionario/cadastro.html" class="list-group-item list-group-item-action">Funcionario</a>
-      <a href="produto/cadastro.html" class="list-group-item list-group-item-action">Produto</a>
-      <a href="#" class="list-group-item list-group-item-action">Sair</a>
+      <a href="#" class="list-group-item list-group-item-action">Início</a>
+      <a href="cliente" class="list-group-item list-group-item-action">Cliente</a>
+      <a href="produto" class="list-group-item list-group-item-action">Produto</a>
+      <a href="/" class="list-group-item list-group-item-action">Sair</a>
     </div>
   </div>
 
@@ -75,45 +80,13 @@
         <input type="text" class="form-control" id="inputCity" th:field="*{salario}">
       </div>
 
-      <div class="col-md-12">
-        <input type="submit" name="" >
+      <div class="col-md-3 mt-5">
+        <button class="btn btn-success form-control" type="submit" name="">Salvar</button>
       </div>
     </form>
 
-    <div class="mt-5">
-      <table class="table">
-        <thead>
-        <tr>
-          <th scope="col">id</th>
-          <th scope="col">Apelido</th>
-          <th scope="col">BI</th>
-          <th scope="col">Telefone</th>
-          <th scope="col">Email</th>
-          <th scope="col">cidade</th>
-          <th scope="col">Bairro</th>
-          <th scope="col">Nr casa</th>
-          <th scope="col">Qtr</th>
-          <th scope="col">Salario</th>
-          <th>Acções</th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr th:each="func : ${dados}">
-          <td th:text="${func.getId()}"></td>
-
-          <td th:text="${func.getNome()}"></td>
-          <td th:text="${func.getBi()}"></td>
-          <td th:text="${func.getEmail()}"></td>
-          <td th:text="${func.getNr_telefone()}"></td>
-          <td>
-            <form th:action="@{/funcionario/{id}/excluir(id=${func.getId()})}" method="post">
-              <input type="hidden" name="_method" value="delete" />
-              <button type="submit">Apagar</button>
-            </form>
-          </td>
-        </tr>
-        </tbody>
-      </table>
+	 <div class="mt-4">
+    	<a href="funcionario-action" class=""><button class="btn btn-dark form-control" type="submit" name="">Ver Funcionarios</button></a>    	
     </div>
   </div>
 </div>

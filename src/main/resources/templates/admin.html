@@ -18,37 +18,24 @@
     <span class="mb-0 h5 text-white fs-5">Bem vindos!</span>
   </div>
 </nav>
-<table border="2">
-  <thead>
-  <tr>
-    <th>ID</th>
-    <th>Nome</th>
-    <th>Descricao</th>
-    <th>Quantidade</th>
-    <th>Preco</th>
-    <th>Data Validade</th>
-    <th>Acções</th>
-  </tr>
-  </thead>
-  <tbody>
-  <!-- iterar sobre a lista de pessoas -->
-  <tr th:each="prod : ${dados}">
-    <td th:text="${prod.getId()}"></td>
-    <td th:text="${prod.nome}"></td>
-    <td th:text="${prod.descricao}"></td>
-    <td th:text="${prod.quantidade}"></td>
-    <td th:text="${prod.preco}"></td>
-    <td th:text="${prod.data_exp}"></td>
-    <td>
-      <form th:action="@{/produto/{id}/excluir(id=${prod.getId()})}" method="post">
-        <input type="hidden" name="_method" value="delete" />
-        <button type="submit">Apagar</button>
-      </form>
-    </td>
-  </tr>
-  </tbody>
-</table>
 
+<div class="row">
+  <div class="col-2">
+    <div class="list-group">
+      <a href="#" class="list-group-item list-group-item-action">Início</a>
+      <a href="/clientes/cliente" class="list-group-item list-group-item-action">Cliente</a>
+      <a href="funcionarios/funcionario" class="list-group-item list-group-item-action">Funcionario</a>
+      <a href="produtos/produto" class="list-group-item list-group-item-action">Produto</a>
+      <a href="/" class="list-group-item list-group-item-action">Sair</a>
+    </div>
+  </div>
+
+  <div class="col-6 p-4">
+    <div class="container">
+    	<h1>Menu Admin</h1>
+    </div>
+  </div>
+</div>
 
 <!-- Option 1: Bootstrap Bundle with Popper -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>

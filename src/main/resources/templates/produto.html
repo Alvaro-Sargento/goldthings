@@ -22,11 +22,10 @@
 <div class="row">
   <div class="col-2">
     <div class="list-group">
-      <a href="index.html" class="list-group-item list-group-item-action">Início</a>
-      <a href="cliente/cadastro.html" class="list-group-item list-group-item-action">Cliente</a>
-      <a href="funcionario/cadastro.html" class="list-group-item list-group-item-action">Funcionario</a>
-      <a href="produto/cadastro.html" class="list-group-item list-group-item-action">Produto</a>
-      <a href="#" class="list-group-item list-group-item-action">Sair</a>
+      <a href="#" class="list-group-item list-group-item-action">Início</a>
+      <a href="cliente" class="list-group-item list-group-item-action">Cliente</a>
+      <a href="funcionario" class="list-group-item list-group-item-action">Funcionario</a>
+      <a href="/" class="list-group-item list-group-item-action">Sair</a>
     </div>
   </div>
 
@@ -47,8 +46,8 @@
         <input type="number" th:field="*{preco}" class="form-control" id="inputAddress" placeholder="">
       </div>
 
-      <div class="col-2">
-        <label for="email" class="form-label">Quantidade</label>
+      <div class="col-3">
+        <label for="" class="form-label">Quantidade</label>
         <input type="number" th:field="*{quantidade}" class="form-control" id="inputAddress2" placeholder="">
       </div>
 
@@ -57,42 +56,15 @@
         <input type="date" th:field="*{data_exp}" class="form-control" id="inputCity">
       </div>
 
-      <div class="col-md-12">
-        <input type="submit" name="" >
+      <div class="col-md-3 mt-3">
+        <button class="btn btn-success form-control" type="submit" name="">Salvar</button>
       </div>
-
     </form>
-
-    <div>
-      <table class="table">
-        <thead>
-        <tr>
-          <th scope="col">id</th>
-          <th scope="col">Nome</th>
-          <th scope="col">Preco</th>
-          <th scope="col">QTD</th>
-          <th scope="col">Validade</th>
-          <th scope="col">Descricao</th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr th:each="prod : ${dados}">
-          <td th:text="${prod.getId()}"></td>
-          <td th:text="${prod.nome}"></td>
-          <td th:text="${prod.descricao}"></td>
-          <td th:text="${prod.quantidade}"></td>
-          <td th:text="${prod.preco}"></td>
-          <td th:text="${prod.data_exp}"></td>
-          <td>
-            <form th:action="@{/produto/{id}/excluir(id=${prod.getId()})}" method="post">
-              <input type="hidden" name="_method" value="delete" />
-              <button type="submit">Apagar</button>
-            </form>
-          </td>
-        </tr>
-        </tbody>
-      </table>
+    
+    <div class="mt-4">
+    	<a href="produto-action" class=""><button class="btn btn-dark form-control" type="submit" name="">Ver Produtos</button></a>    	
     </div>
+
   </div>
 </div>
 

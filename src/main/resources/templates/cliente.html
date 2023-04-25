@@ -54,11 +54,10 @@
 <div class="row mt-5">
   <div class="col-2">
     <div class="list-group">
-      <a href="index.html" class="list-group-item list-group-item-action">Início</a>
-      <a href="cliente/cadastro.html" class="list-group-item list-group-item-action">Cliente</a>
-      <a href="funcionario/cadastro.html" class="list-group-item list-group-item-action">Funcionario</a>
-      <a href="produto/cadastro.html" class="list-group-item list-group-item-action">Produto</a>
-      <a href="#" class="list-group-item list-group-item-action">Sair</a>
+      <a href="#" class="list-group-item list-group-item-action">Início</a>
+      <a href="funcionario" class="list-group-item list-group-item-action">Funcionario</a>
+      <a href="produto" class="list-group-item list-group-item-action">Produto</a>
+      <a href="/" class="list-group-item list-group-item-action">Sair</a>
     </div>
   </div>
 
@@ -109,44 +108,14 @@
         <label for="cargo" class="form-label">Quarteirao</label>
         <input type="text" class="form-control" id="inputCity" th:field="*{quarteirao}">
       </div>
-      <div class="col-md-12">
-        <input type="submit" name="" >
+      <div class="col-md-3 mt-5">
+        <button class="btn btn-success form-control" type="submit" name="">Salvar</button>
       </div>
 
     </form>
-
-    <div class="mt-5">
-      <table class="table">
-        <thead>
-        <tr>
-          <th scope="col">id</th>
-          <th scope="col">Apelido</th>
-          <th scope="col">BI</th>
-          <th scope="col">Telefone</th>
-          <th scope="col">Email</th>
-          <th scope="col">cidade</th>
-          <th scope="col">Bairro</th>
-          <th scope="col">Nr casa</th>
-          <th scope="col">Qtr</th>
-          <th>Acções</th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr th:each="cliente : ${dados}">
-          <td th:text="${cliente.getId()}"></td>
-          <td th:text="${cliente.getNome()}"></td>
-          <td th:text="${cliente.getBi()}"></td>
-          <td th:text="${cliente.getEmail()}"></td>
-          <td th:text="${cliente.getNr_telefone()}"></td>
-          <td>
-            <form th:action="@{/cliente/{id}/excluir(id=${cliente.getId()})}" method="post">
-              <input type="hidden" name="_method" value="delete" />
-              <button type="submit">Apagar</button>
-            </form>
-          </td>
-        </tr>
-        </tbody>
-      </table>
+    
+    <div class="mt-4">
+    	<a href="cliente-action" class=""><button class="btn btn-dark form-control" type="submit" name="">Ver Clientes</button></a>    	
     </div>
   </div>
 </div>
