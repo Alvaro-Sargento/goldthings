@@ -11,14 +11,14 @@
     <title>Produto</title>
   </head>
   <body>
-  
+
   	<!-- As a heading -->
 	<nav class="navbar navbar-light bg-dark">
 	  <div class="container-fluid">
 	    <span class="navbar-brand mb-0 h1 text-white fs-1">GOLD THINGS</span>
 	  </div>
-	</nav>    
-	
+	</nav>
+
 	<div class="row">
 		<div class="col-2">
 			<div class="list-group">
@@ -26,8 +26,8 @@
 			  	<a href="#" class="list-group-item list-group-item-action">Sair</a>
 			</div>
 		</div>
-		
-		
+
+
 		<div class="col-6 p-4">
 			<form class="row g-3">
 			  	<div class="col-md-12">
@@ -38,12 +38,12 @@
 			    	<label for="" class="form-label">ID</label>
 			    	<input type="number" class="form-control" id="inputAddress" placeholder="">
 			  	</div>
-			  	
+
 			  	<div class="col-3">
 			    	<label for="" class="form-label">Nome</label>
 			    	<input type="text" class="form-control" id="inputAddress" placeholder="">
 			  	</div>
-			  	
+
 			  	<div class="col-3">
 			    	<label for="" class="form-label">Validade</label>
 			    	<input type="date" class="form-control" id="inputAddress" >
@@ -52,7 +52,7 @@
 			  	<div class="col-md-12">
 			    	<input type="submit" name=""  >
 			  	</div>
-			 
+
 			</form>
 
 			<div>
@@ -69,24 +69,38 @@
 				    </tr>
 				  </thead>
 				  <tbody>
-				    <tr>
-				      <th scope="row">#</th>
-				      <td></td>
-				      <td></td>
-				      <td></td>
-				      <td></td>
-				      <td></td>				      	
-				      <td>
-				      	<div class="row">
-				      		<div class="col-md-5">
-				      			<button class="btn btn-warning form-control" type="submit" name="">Editar</button>
-				      		</div>
-				      		<div class="col-md-5">
-				      			<button class="btn btn-danger form-control" type="submit" name="">Apagar</button>
-				      		</div>
-				      	</div>				      	
-				      </td>
-				    </tr>
+					  <tr th:each="produto : ${dados}">
+						  <td th:text="${produto.getId()}"></td>
+						  <td th:text="${produto.getNome()}"></td>
+						  <td th:text="${produto.getPreco()}"></td>
+						  <td th:text="${produto.getQuantidade()}"></td>
+						  <td th:text="${produto.getData_exp()}"></td>
+						  <td th:text="${produto.getDescricao()}"></td>
+						  <td>
+							  <form th:action="@{/produtos/produto/{id}/excluir(id=${produto.getId()})}" method="post">
+								  <input type="hidden" name="_method" value="delete" />
+								  <button type="submit">Apagar</button>
+							  </form>
+						  </td>
+					  </tr>
+<!--				    <tr>-->
+<!--				      <th scope="row">#</th>-->
+<!--				      <td></td>-->
+<!--				      <td></td>-->
+<!--				      <td></td>-->
+<!--				      <td></td>-->
+<!--				      <td></td>				      	-->
+<!--				      <td>-->
+<!--				      	<div class="row">-->
+<!--				      		<div class="col-md-5">-->
+<!--				      			<button class="btn btn-warning form-control" type="submit" name="">Editar</button>-->
+<!--				      		</div>-->
+<!--				      		<div class="col-md-5">-->
+<!--				      			<button class="btn btn-danger form-control" type="submit" name="">Apagar</button>-->
+<!--				      		</div>-->
+<!--				      	</div>				      	-->
+<!--				      </td>-->
+<!--				    </tr>-->
 				  </tbody>
 				</table>
 			</div>
