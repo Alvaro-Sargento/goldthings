@@ -1,0 +1,26 @@
+.tamanho{
+    margin-top: 10%;
+  
+}
+.borda{
+    border-color:#fd7e14;
+}
+.linha{
+    color: #fd7e14;
+}
+
+
+ul li a{
+    text-decoration: none;
+    text-transform: none;
+    font-size: large;
+    color: black;
+    font-weight:700;
+    
+}
+.input-area{
+    margin-bottom: 20px;
+}
+.nav-link:hover{
+    color: #fd7e14;
+}
