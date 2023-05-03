@@ -30,7 +30,7 @@
   </div>
 
   <div class="col-6 p-4">
-    <form class="row g-3" th:action="@{/produto-save}" th:object="${produto}" method="post">
+    <form class="row g-3" th:action="@{/produtos/produto-save}" th:object="${produto}" method="post">
       <div class="col-md-6">
         <label for="nome" class="form-label">Nome</label>
         <input type="text" class="form-control" th:field="*{nome}" id="inputPassword4">
@@ -60,11 +60,10 @@
         <button class="btn btn-success form-control" type="submit" name="">Salvar</button>
       </div>
     </form>
-    
-    <div class="mt-4">
-    	<a href="produto-action" class=""><button class="btn btn-dark form-control" type="submit" name="">Ver Produtos</button></a>    	
-    </div>
 
+    <div class="mt-4">
+    	<a href="produto-action" class=""><button class="btn btn-dark form-control" type="submit" name="">Ver Produtos</button></a>
+    </div>
   </div>
 </div>
 
