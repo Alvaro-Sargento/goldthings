@@ -16,8 +16,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import java.util.List;
 
 @Controller
-
-
 public class ClienteController {
     @Autowired
     private ClienteRepository clienteRepository;
