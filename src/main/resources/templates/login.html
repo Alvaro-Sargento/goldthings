@@ -17,16 +17,22 @@
       <div class=" tamanho row align-items-center">
     
           <div class="col-md-10 mx-auto col-lg-5">
-            <form action="" class="p-4 p-md-5 border rounded-3 bg-light">
+              <div th:if="${param.error}">
+                  <div class="alert alert-danger">Invalid Email or Password !!!</div>
+              </div>
+            <form action="" class="p-4 p-md-5 border rounded-3 bg-light"
+                  method="post"
+                  role="form"
+                  th:action="@{/login}">
                 <div class="mb-4 text-center">
                     <h4>Login</h4>
                 </div>
                 <div class="form-floating mb-3">
-                   <input type="email" class=" borda form-control border-#fd7e14 input-border" id="inputEmail" placeholder="Introduza o email">
+                   <input type="email" name="username" class=" borda form-control border-#fd7e14 input-border" id="inputEmail" placeholder="Introduza o email">
                     <label  for="inputEmail"><i class="fa-solid fa-envelope" style="color: #ff9d14;"></i> Email</label>
                 </div>
                 <div class="form-floating mb-3">
-                    <input type="password" class=" borda form-control border-#fd7e14 input-border" id="inputPassword" placeholder="Introduza a sua senha">
+                    <input type="password" name="password" class=" borda form-control border-#fd7e14 input-border" id="inputPassword" placeholder="Introduza a sua senha">
                     <label for="inputPassword"><i class="fa-solid fa-lock" style="color: #ff9d14;"></i> Password</label>
                 </div>
                 
@@ -35,7 +41,7 @@
                 </div>
     
                 <div class=" mb-1 text-center">
-                    <p> <a href="Cadastro.html" class="nav-link text-dark text-bold">Nao tem uma conta? Clique aqui</a> </p>
+                    <p> <a th:href="@{/registration}" class="nav-link text-dark text-bold">Nao tem uma conta? Clique aqui</a> </p>
                 </div>
                 <button class=" btn w-100 btn btn-lg btn-#fd7e14" type="submit" > Entrar</button>
             </form>

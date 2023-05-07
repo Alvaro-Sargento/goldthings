@@ -18,14 +18,17 @@
     <div class="container d-flex justify-content-center align-items-center vh-100">
 
         <!-- Cria um formulário com o fundo light -->
-        <form class="bg-light p-5 rounded shadow-lg" style="width: 500px;">
+        <form class="bg-light p-5 rounded shadow-lg"  th:action="@{/registration}"
+              th:object="${user}" style="width: 500px;" method="post">
 
                 <!-- Adiciona o campo de nome de usuário -->
                 <div class=" mb-3">
                     <label for="username" class="form-label mb-4">Nome de Usuário</label>
                     <div class="input-group">
-                        <span class="input-group-text"><i class=""></i></span><input type="text" class="form-control" id="username" name="username" required>
-                    </div> 
+                        <span class="input-group-text"><i class=""></i></span><input type="text" class="form-control" id="username" name="name" required>
+                    </div>
+                    <p class="text-danger" th:errors="*{name}"
+                       th:if="${#fields.hasErrors('name')}"></p>
                 </div>
     
                 <!-- Adiciona o campo de email -->
@@ -34,6 +37,8 @@
                     <div class="input-group">
                         <span class="input-group-text"><i class=""></i></span><input type="email" class="form-control" id="email" name="email" required>
                     </div>
+                    <p class="text-danger" th:errors="*{email}"
+                       th:if="${#fields.hasErrors('email')}"></p>
                 </div>
     
                 <!-- Adiciona o campo de senha -->
@@ -42,6 +47,8 @@
                     <div class="input-group">
                         <span class="input-group-text"><i class=""></i></span><input type="password" class="form-control" id="password" name="password" required>
                     </div>
+                    <p class="text-danger" th:errors="*{password}"
+                       th:if="${#fields.hasErrors('password')}"></p>
                 </div>
     
                 <!-- Adiciona o campo de confirmação de senha -->
