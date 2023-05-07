@@ -10,7 +10,6 @@ import goldthings.models.Funcionario;
 
 @Controller
 public class ControllerProdutoAction {
-
 	@GetMapping("/produto-action")
 	public String home() {
 		return "/produto-action";

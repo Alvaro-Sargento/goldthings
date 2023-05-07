@@ -9,14 +9,13 @@ import jakarta.persistence.*;
 @Entity
 @Table(name="PRODUTO")
 public class Produto extends AbstractEntity<Long> {
-
-	@Column(name="nome", nullable =false)
+	@Column(name="nome", nullable = false)
 	private String nome;
 
-	@Column(nullable =false)
+	@Column(nullable = false)
 	private String descricao;
 
-	@Column(nullable =false)
+	@Column(nullable = false)
 	private Integer quantidade;
 
 	@Column(nullable =false, columnDefinition="DOUBLE DEFAULT 0.00")
@@ -25,8 +24,16 @@ public class Produto extends AbstractEntity<Long> {
 	@Column(name="data_exp", nullable =false, columnDefinition="DATE")
 	private LocalDate data_exp;
 
-//	@OneToMany(mappedBy="produto", cascade = CascadeType.ALL, orphanRemoval = true)
-//	private ArrayList<Registo_produto> registo_produto = new ArrayList<>();
+	@Column(nullable = false)
+	private String imagem;
+
+	public String getImagem() {
+		return imagem;
+	}
+
+	public void setImagem(String imagem) {
+		this.imagem = imagem;
+	}
 
 	public String getNome() {
 		return nome;

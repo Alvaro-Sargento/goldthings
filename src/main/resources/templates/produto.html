@@ -30,39 +30,37 @@
   </div>
 
   <div class="col-6 p-4">
-    <form class="row g-3" th:action="@{/produtos/produto-save}" th:object="${produto}" method="post">
+    <form class="row g-3" th:action="@{/produtos/produto-save}" th:object="${produto}" method="post" enctype="multipart/form-data">
       <div class="col-md-6">
         <label for="nome" class="form-label">Nome</label>
         <input type="text" class="form-control" th:field="*{nome}" id="inputPassword4">
       </div>
-
       <div class="col-md-6">
         <label for="bi" class="form-label">Descicao</label> <br>
         <textarea maxlength="" th:field="*{descricao}">descreva...</textarea>
       </div>
-
       <div class="col-6">
         <label for="" class="form-label">Preco</label>
         <input type="number" th:field="*{preco}" class="form-control" id="inputAddress" placeholder="">
       </div>
-
       <div class="col-3">
         <label for="" class="form-label">Quantidade</label>
         <input type="number" th:field="*{quantidade}" class="form-control" id="inputAddress2" placeholder="">
       </div>
-
       <div class="col-md-3">
         <label for="departamento" class="form-label">Validade</label>
         <input type="date" th:field="*{data_exp}" class="form-control" id="inputCity">
       </div>
-
+      <div class="col-md-5">
+        <label for="" class="form-label">Imagem produto</label>
+        <input type="file" name="file" class="form-control" accept="image/png, image/jpeg" id="inputAddress2" placeholder="">
+      </div>
       <div class="col-md-3 mt-3">
         <button class="btn btn-success form-control" type="submit" name="">Salvar</button>
       </div>
     </form>
-
     <div class="mt-4">
-    	<a href="produto-action" class=""><button class="btn btn-dark form-control" type="submit" name="">Ver Produtos</button></a>
+    	<a href="produto-action" th:href="@{/produtos/listar}" class=""><button class="btn btn-dark form-control" type="submit" name="">Ver Produtos</button></a>
     </div>
   </div>
 </div>
