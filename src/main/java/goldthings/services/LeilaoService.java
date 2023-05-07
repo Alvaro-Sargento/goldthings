@@ -5,6 +5,8 @@ import goldthings.repository.LeilaoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class LeilaoService {
 
@@ -15,5 +17,7 @@ public class LeilaoService {
         return leilaoRepository.save(leilao);
     }
 
-
+    public List<Leilao> findAllLeilao() {
+        return leilaoRepository.findAll();
+    }
 }

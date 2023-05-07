@@ -1,6 +1,7 @@
 package goldthings.controller;
 
 import goldthings.models.Leilao;
+import goldthings.models.Produto;
 import goldthings.services.LeilaoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -14,6 +15,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.List;
 import java.util.Objects;
 import java.util.UUID;
 
@@ -30,6 +32,13 @@ public class LeilaoController {
     public String formulario(Model model) {
         model.addAttribute("leilao", new Leilao());
         return "formLeilao";
+    }
+
+    @GetMapping("/listar")
+    public String listar(Model model) {
+        List<Leilao> leilaoList = leilaoService.findAllLeilao();
+        model.addAttribute("dados", leilaoList);
+        return "leilao-action";
     }
 
     @PostMapping("/leilao-save")

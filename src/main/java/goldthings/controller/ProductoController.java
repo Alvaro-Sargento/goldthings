@@ -42,7 +42,7 @@ public class ProductoController {
         DataSize maxFileSize = DataSize.ofMegabytes(5);
         if (file.getSize() > maxFileSize.toBytes()) {
             redirectAttributes.addFlashAttribute("erro", "O arquivo excede o tamanho máximo permitido");
-            return "redirect:/leilao/formulario";
+            return "redirect:/produtos/formulario";
         }
 
         String fileName = StringUtils.cleanPath(Objects.requireNonNull(file.getOriginalFilename()));
