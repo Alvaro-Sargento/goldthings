@@ -35,7 +35,7 @@ public class ProductoController {
     public String create(@ModelAttribute("produto") Produto produto, @RequestParam("file") MultipartFile file, RedirectAttributes redirectAttributes) throws IOException {
         if (file.isEmpty()) {
             redirectAttributes.addFlashAttribute("erro", "Selecione um arquivo para fazer upload");
-            return "redirect:/";
+            return "redirect:/produtos/listar	";
         }
 
         // Defina o tamanho máximo permitido para o arquivo (por exemplo, 5MB)
@@ -78,14 +78,22 @@ public class ProductoController {
         return "produto";
     }
 
+
     @GetMapping("/listar")
     public String listar(Model model) {
         List<Produto> produtoList = produtoService.findAllProducts();
-        System.out.println(produtoList);
         model.addAttribute("produto", new Produto());
         model.addAttribute("dados", produtoList);
         return "produto-action";
     }
+
+	    @GetMapping("/detalhes/{id}")
+	    public String detalhes(@PathVariable("id") Long id, Model model) {
+	        Produto produto = produtoService.findById(id);
+	        model.addAttribute("produto", produto);
+	        return "produto-detalhes";
+	    }
+
 
     @PostMapping("/produto/{id}/excluir")
     public String excluir(@PathVariable Long id) {
