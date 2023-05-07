@@ -50,7 +50,6 @@
 		    <artifactId>github-com-transferwise-bootstrap</artifactId>
 		    <version>5.0.6</version>
 		</dependency>
-		
 		<dependency>
 		    <groupId>org.webjars.npm</groupId>
 		    <artifactId>jquery</artifactId>
